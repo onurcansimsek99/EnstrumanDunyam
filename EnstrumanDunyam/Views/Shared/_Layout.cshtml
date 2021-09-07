@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Enstsrüman Dünyam</title>
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="~/css/all.min.css" rel="stylesheet" />
+    <link href="~/css/animate.min.css" rel="stylesheet" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/lity.min.css" rel="stylesheet" />
+    <link href="~/css/responsive.css" rel="stylesheet" />
+    <link href="~/css/slick-theme.css" rel="stylesheet" />
+    <link href="~/css/slick.css" rel="stylesheet" />
+    <link href="~/css/slicknav.min.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader"></div>
+    <!-- Start-Header-Section -->
+    <!-- Menu-start-area -->
+    <header>
+        <!--Nav-Bar-->
+        <div class="topbar">
+            <div class="container">
+                <div class="row">
+                    <div class="top-content">
+                        <div class="selec-lang">
+                            <div class="lang-drop eng">
+                                <select>
+                                    <option value="TRY" class="option-bg">TRY</option>
+                                    <option value="USD">USD</option>
+
+                                </select>
+                            </div>
+                            <div class="lang-drop">
+                                <select>
+                                    <option value="Türkçe">Türkçe</option>
+                                    <option value="İngilizce">İngilizce</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="top-socail">
+                            <ul>
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                                <li><a href="#" class="active"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Nav-Bar-->
+        <div class="header-fixed header-one">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2 col-md-12 col-sm-12">
+                        <div class="nav-brand">
+                            <a href="/"><img src="~/images/enstruman-dunyam-logo.png" class="logo" /></a>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <div class="collapse navbar-collapse my-lg-0" id="navbarNav">
+                                <ul class="navbar-nav mr-auto text-left">
+
+                                    <li class="nav-item">
+                                        <a class="nav-link scroll"  href="/Home">Ana Sayfa</a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link scroll" href="/Home/About">Hakkımızda</a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link scroll" href="/Home/ProductDetail">Ürün Detay</a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link scroll" href="/Home/Blog">Blog</a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link scroll" href="/Home/Contact">İletişim</a>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+                        </nav>
+                    </div>
+
+                    <div class="mobile-menu" data-logo="/images/enstruman-dunyam-logo.png"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    @RenderBody();
+
+    <!---Start-Footer-Section-->
+    <footer class="footer-section-spacing home-footer-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-4">
+                    <div class="footer-about">
+                        <img src="~/images/enstruman-dunyam-logo.png" alt="">
+                        <p>Enstrüman Dünyam size en uygun enstrümanın teminini en doğru şekilde sağlayan 2012 yılında İstanbul'da faaliyete geçmiş bir kuruluştur.</p>
+                    </div>
+                </div>
+                <!--item-->
+                <div class="col-lg-3 col-md-4">
+                    <div class="popular-tag">
+                        <h4 class="footer-title">Popüler Enstrümanlar</h4>
+                        <ul>
+                            <li>
+                                <a href="#">Keman</a>
+                            </li>
+                            <li>
+                                <a href="#">Bağlama</a>
+                            </li>
+                            <li>
+                                <a href="#">Piyano</a>
+                            </li>
+                            <li>
+                                <a href="#">Org</a>
+                            </li>
+                            <li class="active">
+                                <a href="#">Gitar</a>
+                            </li>
+                            <li>
+                                <a href="#">Kanun</a>
+                            </li>
+                            <li>
+                                <a href="#">Ney</a>
+                            </li>
+                            <li>
+                                <a href="#">Klarnet</a>
+                            </li>
+                            <li>
+                                <a href="#">Darbuka</a>
+                            </li>
+                            <li>
+                                <a href="#">Kemençe</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--item-->
+                <div class="col-lg-3 col-md-4">
+                    <div class="contact-us">
+                        <h4 class="footer-title">İletişim Bilgileri</h4>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt"></i> İstanbul/Beyoğlu</li>
+                            <li><i class="fa fa-phone"></i>(+90) 54721654371</li>
+                            <li><i class="fas fa-envelope"></i> bilgi@edunyam.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <!--item-->
+                <div class="col-lg-3 col-md-4">
+                    <div class="contact-us">
+                        <h4 class="footer-title">İletişime Geçin!</h4>
+                        <p>Bültene Kaydolun!</p>
+                        <input type="email" name="email" placeholder="Mail adresinizi giriniz" required="" class="email">
+                        <button type="submit" class="contact-btn">Gönder</button>
+                    </div>
+                </div>
+                <!--copy-right-->
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="container-fluid">
+                            <div class="copy-right">
+                                <span class="copy-right-seprater"></span>
+                                <p>2021 . Tüm Hakları Enstrüman Dünyam Kuruluşuna Aittir</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Jquery.min.js-->
+    <script src="~/js/jquery.1.12.4.js"></script>
+    <!--bootstrap.min.js-->
+    <script src="~/js/bootstrap.min.js"></script>
+    <!--slicknav.min.js-->
+    <script src="~/js/jquery.slicknav.min.js"></script>
+    <!--slickslider.min.js-->
+    <script src="~/js/slick.min.js"></script>
+    <!-- magnific-popup.js -->
+    <script src="~/js/lity.min.js"></script>
+    <!-- imagesloaded.js -->
+    <script src="~/js/imagesloaded.js"></script>
+    <!-- wow.js -->
+    <script src="~/js/wow.min.js"></script>
+    <!--isotope.min.js-->
+    <!-- <script src="js/isotope.min.js"></script>-->
+    <!-- main.js -->
+    <script src="~/js/main.js"></script>
+  
+    <script type="text/javascript">
+        const currentLocation = location.href;
+        const menuItem = document.getElementsByClassName("nav-link")
+        const menuLength = menuItem.length
+        for (let i = 0; i < menuLength; i++) {
+            if (menuItem[i].href === currentLocation) {
+                menuItem[i].parentNode.className += " active"
+            }
+        }
+    </script>
+
+</body>
+</html>
