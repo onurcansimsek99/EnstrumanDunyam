@@ -12,6 +12,7 @@ namespace DataAccessLayer.Abstract
         void Add(Blog blog);
         //Deneme
         //Deneme2
+        //Deneme2
         void Delete(int blogID);
         void Update(Blog blog);
     }
