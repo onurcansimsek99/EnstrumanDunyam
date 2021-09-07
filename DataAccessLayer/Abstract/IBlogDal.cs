@@ -10,6 +10,7 @@ namespace DataAccessLayer.Abstract
         List<Blog> GetAll();
         Blog Get(int blogID);
         void Add(Blog blog);
+        //Deneme
         void Delete(int blogID);
         void Update(Blog blog);
     }
