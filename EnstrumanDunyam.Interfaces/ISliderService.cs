@@ -14,5 +14,6 @@ namespace EnstrumanDunyam.Interfaces
         void Add(Slider slider);
         void Delete(int sliderID);
         void Update(Slider slider);
+        //
     }
 }
