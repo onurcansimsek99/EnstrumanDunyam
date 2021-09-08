@@ -37,7 +37,6 @@ namespace DataAccessLayer.Concrete.EntitiyFramework
             Blog blogToUpdate = _context.Blogs.FirstOrDefault(p => p.BlogID == blog.BlogID);
             blogToUpdate.BlogBaslik = blog.BlogBaslik;
             blogToUpdate.BlogIcerik = blog.BlogIcerik;
-            blogToUpdate.BlogID = blog.BlogID;
             blogToUpdate.BlogYayinlanmaTarihi = blog.BlogYayinlanmaTarihi;
             blogToUpdate.BlogYazar = blog.BlogYazar;
             _context.SaveChanges();

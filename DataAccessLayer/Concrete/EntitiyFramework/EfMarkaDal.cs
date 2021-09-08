@@ -37,6 +37,8 @@ namespace DataAccessLayer.Concrete.EntitiyFramework
             Marka markaToUpdate = _context.Markas.FirstOrDefault(p => p.MarkaID == marka.MarkaID);
 
             markaToUpdate.MarkaAdi = marka.MarkaAdi;
+
+            _context.SaveChanges();
             
         }
     }

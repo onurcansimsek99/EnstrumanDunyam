@@ -36,7 +36,6 @@ namespace DataAccessLayer.Concrete.EntitiyFramework
         {
             Enstruman enstrumanToUpdate = _context.Enstrumans.FirstOrDefault(p => p.EnstrumanID == enstruman.EnstrumanID);
 
-            enstrumanToUpdate.EnstrumanID = enstruman.EnstrumanID;
             enstrumanToUpdate.EnstrumanAdi = enstruman.EnstrumanAdi;
             enstrumanToUpdate.EnstrumanGorsel = enstruman.EnstrumanGorsel;
             enstrumanToUpdate.EnstrumanTuru = enstruman.EnstrumanTuru;
@@ -45,8 +44,6 @@ namespace DataAccessLayer.Concrete.EntitiyFramework
             enstrumanToUpdate.OneCikanMi = enstruman.OneCikanMi;
             enstrumanToUpdate.EnstrumanYuklemeTarihi = enstruman.EnstrumanYuklemeTarihi;
 
-            enstrumanToUpdate.EnstrumanCesitID = enstruman.EnstrumanCesitID;
-            enstrumanToUpdate.MarkaID = enstruman.MarkaID;
             _context.SaveChanges();
         }
     }

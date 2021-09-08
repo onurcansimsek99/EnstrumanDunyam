@@ -35,9 +35,12 @@ namespace DataAccessLayer.Concrete.EntitiyFramework
         public void Update(Kullanici kullanici)
         {
             Kullanici kullaniciToUpdate = _context.Kullanicis.FirstOrDefault(p => p.KullaniciID == kullanici.KullaniciID);
-            kullaniciToUpdate.KullaniciID = kullanici.KullaniciID;
+
             kullaniciToUpdate.KullaniciAdi = kullanici.KullaniciAdi;
             kullaniciToUpdate.KullaniciSifre = kullanici.KullaniciSifre;
+
+            _context.SaveChanges();
+
         }
     }
 }

@@ -39,6 +39,8 @@ namespace DataAccessLayer.Concrete.EntitiyFramework
             sliderToUpdate.SliderBaslik = slider.SliderBaslik;
             sliderToUpdate.SliderGorsel = slider.SliderGorsel;
             sliderToUpdate.SliderAciklama = slider.SliderAciklama;
+
+            _context.SaveChanges();
         }
     }
 }

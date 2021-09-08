@@ -30,15 +30,15 @@ namespace DataAccessLayer.Concrete.EntitiyFramework
         public List<EnstrumanCesit> GetAll()
         {
             return _context.EnstrumanCesits.ToList();             //using System.Linq
-
         }
 
         public void Update(EnstrumanCesit enstrumanCesit)
         {
             EnstrumanCesit enstrumanCesitToUpdate = _context.EnstrumanCesits.FirstOrDefault(p => p.EnstrumanCesitID == enstrumanCesit.EnstrumanCesitID);
-            enstrumanCesitToUpdate.EnstrumanCesitID = enstrumanCesit.EnstrumanCesitID;
+
             enstrumanCesitToUpdate.EnstrumanCesitAdi = enstrumanCesit.EnstrumanCesitAdi;
             enstrumanCesitToUpdate.EnstrumanCesitAciklamasi = enstrumanCesit.EnstrumanCesitAciklamasi;
+
             _context.SaveChanges();
             
         }
