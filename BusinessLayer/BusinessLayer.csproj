@@ -6,7 +6,11 @@
 
   <ItemGroup>
     <Folder Include="Abstract\" />
-    <Folder Include="Concrete\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj" />
+    <ProjectReference Include="..\EnstrumanDunyam.Interfaces\EnstrumanDunyam.Interfaces.csproj" />
   </ItemGroup>
 
 </Project>

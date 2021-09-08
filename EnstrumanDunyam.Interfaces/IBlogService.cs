@@ -9,10 +9,10 @@ namespace EnstrumanDunyam.Interfaces
 {
     public interface IBlogService
     {
-        List<Blog> GetAll();
-        Blog Get();
-        void Add(Blog blog);
-        void Delete(int blogID);
-        void Update(Blog blog);
+        public List<Blog> GetAll();
+        public Blog Get(int blogID);
+        public void Add(Blog blog);
+        public void Delete(int blogID);
+        public void Update(Blog blog);
     }
 }

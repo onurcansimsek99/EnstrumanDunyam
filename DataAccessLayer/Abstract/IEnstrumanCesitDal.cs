@@ -12,6 +12,7 @@ namespace DataAccessLayer.Abstract
         void Add(EnstrumanCesit enstrumanCesit);
         void Delete(int enstrumanCesitID);
         void Update(EnstrumanCesit enstrumanCesit);
+        
 
     }
 }
