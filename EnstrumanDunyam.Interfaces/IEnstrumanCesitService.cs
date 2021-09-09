@@ -10,7 +10,7 @@ namespace EnstrumanDunyam.Interfaces
     public interface IEnstrumanCesitService
     {
         List<EnstrumanCesit> GetAll();
-        EnstrumanCesit Get();
+        EnstrumanCesit Get(int enstrumanCesitID);
         void Add(EnstrumanCesit enstrumanCesit);
         void Delete(int enstrumanCesitID);
         void Update(EnstrumanCesit enstrumanCesit);

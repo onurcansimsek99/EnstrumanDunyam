@@ -10,7 +10,7 @@ namespace EnstrumanDunyam.Interfaces
     public interface IEnstrumanService
     {
         List<Enstruman> GetAll();
-        Enstruman Get();
+        Enstruman Get(int enstrumanID);
         void Add(Enstruman enstruman);
         void Delete(int enstrumanID);
         void Update(Enstruman enstruman);

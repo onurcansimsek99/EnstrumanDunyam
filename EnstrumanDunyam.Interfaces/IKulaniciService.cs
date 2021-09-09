@@ -10,7 +10,7 @@ namespace EnstrumanDunyam.Interfaces
     public interface IKulaniciService
     {
         List<Kullanici> GetAll();
-        Kullanici Get();
+        Kullanici Get(int kullaniciID);
         void Add(Kullanici kullanici);
         void Delete(int kullaniciID);
         void Update(Kullanici kullanici);
