@@ -1,13 +1,11 @@
 ﻿using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace EnstrumanDunyam.Interfaces
+namespace BusinessLayer.Abstract
 {
-    public interface IKulaniciService
+    public interface IKullaniciService
     {
         List<Kullanici> GetAll();
         Kullanici Get(int kullaniciID);

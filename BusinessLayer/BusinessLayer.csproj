@@ -5,12 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Abstract\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj" />
-    <ProjectReference Include="..\EnstrumanDunyam.Interfaces\EnstrumanDunyam.Interfaces.csproj" />
   </ItemGroup>
 
 </Project>

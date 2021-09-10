@@ -1,11 +1,9 @@
 ﻿using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace EnstrumanDunyam.Interfaces
+namespace BusinessLayer.Abstract
 {
     public interface ISliderService
     {
@@ -14,6 +12,5 @@ namespace EnstrumanDunyam.Interfaces
         void Add(Slider slider);
         void Delete(int sliderID);
         void Update(Slider slider);
-        //
     }
 }
