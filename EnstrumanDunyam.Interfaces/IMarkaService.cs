@@ -10,7 +10,7 @@ namespace EnstrumanDunyam.Interfaces
     public interface IMarkaService
     {
         List<Marka> GetAll();
-        Marka Get();
+        Marka Get(int markaID);
         void Add(Marka marka);
         void Delete(int markaID);
         void Update(Marka marka);

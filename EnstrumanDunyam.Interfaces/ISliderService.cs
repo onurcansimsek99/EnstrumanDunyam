@@ -10,7 +10,7 @@ namespace EnstrumanDunyam.Interfaces
     public interface ISliderService
     {
         List<Slider> GetAll();
-        Slider Get();
+        Slider Get(int sliderID);
         void Add(Slider slider);
         void Delete(int sliderID);
         void Update(Slider slider);

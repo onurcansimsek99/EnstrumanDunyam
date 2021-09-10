@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnstrumanDunyam.WcfLibrary"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnstrumanDunyam.Interfaces", "EnstrumanDunyam.Interfaces\EnstrumanDunyam.Interfaces.csproj", "{A7D66C81-15B7-4EC9-9F5C-6C18D6E3925E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnstrumanDunyam.API", "EnstrumanDunyam.API\EnstrumanDunyam.API.csproj", "{D28A49C4-D418-42F2-AA18-4C1FF6AAE8C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{A7D66C81-15B7-4EC9-9F5C-6C18D6E3925E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7D66C81-15B7-4EC9-9F5C-6C18D6E3925E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7D66C81-15B7-4EC9-9F5C-6C18D6E3925E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D28A49C4-D418-42F2-AA18-4C1FF6AAE8C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D28A49C4-D418-42F2-AA18-4C1FF6AAE8C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D28A49C4-D418-42F2-AA18-4C1FF6AAE8C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D28A49C4-D418-42F2-AA18-4C1FF6AAE8C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
