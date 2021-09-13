@@ -12,30 +12,25 @@ namespace EnstrumanDunyam.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class EnstrumansController : ControllerBase
+    public class BlogsController : ControllerBase
     {
-        private IEnstrumanService _enstrumanService;
+        private IBlogService _blogService;
 
-        public EnstrumansController()
+        public BlogsController()
         {
-            _enstrumanService = new EnstrumanManager();
+            _blogService = new BlogManager();
         }
 
         [HttpGet]
-        public List<Enstruman> GetAll()
+        public List<Blog> GetAll()
         {
-            return _enstrumanService.GetAll();
+            return _blogService.GetAll();
         }
 
-        [HttpGet("{enstrumanID}")]
-        public Enstruman Get(int enstrumanID)
+        [HttpGet("{id}")]
+        public Blog Get(int id)
         {
-            return _enstrumanService.Get(enstrumanID);
+            return _blogService.Get(id);
         }
-
-
-
-
-
     }
 }

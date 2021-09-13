@@ -1,6 +1,5 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
-using EnstrumanDunyam.Interfaces;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -13,6 +12,10 @@ namespace BusinessLayer.Concrete
     {
 
         private IBlogDal _blogDal;
+
+        public BlogManager()
+        {
+        }
 
         public BlogManager(IBlogDal blogDal)
         {

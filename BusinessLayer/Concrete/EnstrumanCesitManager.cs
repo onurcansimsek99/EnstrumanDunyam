@@ -1,5 +1,5 @@
-﻿using DataAccessLayer.Abstract;
-using EnstrumanDunyam.Interfaces;
+﻿using BusinessLayer.Abstract;
+using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,6 +10,10 @@ namespace BusinessLayer.Concrete
     public class EnstrumanCesitManager : IEnstrumanCesitService
     {
         private IEnstrumanCesitDal _enstrumanCesitDal;
+
+        public EnstrumanCesitManager()
+        {
+        }
 
         public EnstrumanCesitManager(IEnstrumanCesitDal enstrumanCesitDal)
         {

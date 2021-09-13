@@ -1,5 +1,5 @@
-﻿using DataAccessLayer.Abstract;
-using EnstrumanDunyam.Interfaces;
+﻿using BusinessLayer.Abstract;
+using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
