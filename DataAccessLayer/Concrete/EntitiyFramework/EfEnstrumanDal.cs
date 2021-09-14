@@ -7,44 +7,45 @@ using System.Text;
 
 namespace DataAccessLayer.Concrete.EntitiyFramework
 {
-    public class EfEnstrumanDal : IEnstrumanDal
+    public class EfEnstrumanDal : GenericRepository<Enstruman>, IEnstrumanDal
     {
-        private Context _context = new Context();
-        public void Add(Enstruman enstruman)
-        {
-            _context.Enstrumans.Add(enstruman);
-            _context.SaveChanges();
-        }
+        //    private Context _context = new Context();
+        //    public void Add(Enstruman enstruman)
+        //    {
+        //        _context.Enstrumans.Add(enstruman);
+        //        _context.SaveChanges();
+        //    }
 
-        public void Delete(int enstrumanID)
-        {
-            _context.Enstrumans.Remove(_context.Enstrumans.FirstOrDefault(p => p.EnstrumanID == enstrumanID));
-            _context.SaveChanges();
-        }
+        //    public void Delete(int enstrumanID)
+        //    {
+        //        _context.Enstrumans.Remove(_context.Enstrumans.FirstOrDefault(p => p.EnstrumanID == enstrumanID));
+        //        _context.SaveChanges();
+        //    }
 
-        public Enstruman Get(int enstrumanID)
-        {
-            return _context.Enstrumans.FirstOrDefault(p => p.EnstrumanID == enstrumanID);
-        }
+        //    public Enstruman Get(int enstrumanID)
+        //    {
+        //        return _context.Enstrumans.FirstOrDefault(p => p.EnstrumanID == enstrumanID);
+        //    }
 
-        public List<Enstruman> GetAll()
-        {
-            return _context.Enstrumans.ToList();
-        }
+        //    public List<Enstruman> GetAll()
+        //    {
+        //        return _context.Enstrumans.ToList();
+        //    }
 
-        public void Update(Enstruman enstruman)
-        {
-            Enstruman enstrumanToUpdate = _context.Enstrumans.FirstOrDefault(p => p.EnstrumanID == enstruman.EnstrumanID);
+        //    public void Update(Enstruman enstruman)
+        //    {
+        //        Enstruman enstrumanToUpdate = _context.Enstrumans.FirstOrDefault(p => p.EnstrumanID == enstruman.EnstrumanID);
 
-            enstrumanToUpdate.EnstrumanAdi = enstruman.EnstrumanAdi;
-            enstrumanToUpdate.EnstrumanGorsel = enstruman.EnstrumanGorsel;
-            enstrumanToUpdate.EnstrumanTuru = enstruman.EnstrumanTuru;
-            enstrumanToUpdate.EnstrumanMarkasi = enstruman.EnstrumanMarkasi;
-            enstrumanToUpdate.EnstrumanFiyati = enstruman.EnstrumanFiyati;
-            enstrumanToUpdate.OneCikanMi = enstruman.OneCikanMi;
-            enstrumanToUpdate.EnstrumanYuklemeTarihi = enstruman.EnstrumanYuklemeTarihi;
+        //        enstrumanToUpdate.EnstrumanAdi = enstruman.EnstrumanAdi;
+        //        enstrumanToUpdate.EnstrumanGorsel = enstruman.EnstrumanGorsel;
+        //        enstrumanToUpdate.EnstrumanTuru = enstruman.EnstrumanTuru;
+        //        enstrumanToUpdate.EnstrumanMarkasi = enstruman.EnstrumanMarkasi;
+        //        enstrumanToUpdate.EnstrumanFiyati = enstruman.EnstrumanFiyati;
+        //        enstrumanToUpdate.OneCikanMi = enstruman.OneCikanMi;
+        //        enstrumanToUpdate.EnstrumanYuklemeTarihi = enstruman.EnstrumanYuklemeTarihi;
 
-            _context.SaveChanges();
-        }
+        //        _context.SaveChanges();
+        //    }
+        //}
     }
 }

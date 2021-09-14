@@ -14,12 +14,13 @@ namespace EnstrumanDunyam.API.Controllers
     [ApiController]
     public class EnstrumanCesitsController : ControllerBase
     {
-        private IEnstrumanCesitService _enstrumanCesitService;
+        EnstrumanCesitManager _enstrumanCesitService = new EnstrumanCesitManager();
+        //private IEnstrumanCesitService _enstrumanCesitService;
 
-        public EnstrumanCesitsController()
-        {
-            _enstrumanCesitService = new EnstrumanCesitManager();
-        }
+        //public EnstrumanCesitsController()
+        //{
+        //    _enstrumanCesitService = new EnstrumanCesitManager();
+        //}
 
         [HttpGet]
         public List<EnstrumanCesit> GetAll()
@@ -27,10 +28,29 @@ namespace EnstrumanDunyam.API.Controllers
             return _enstrumanCesitService.GetAll();
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("get")]
         public EnstrumanCesit Get(int id)
         {
             return _enstrumanCesitService.Get(id);
+        }
+
+        [HttpPost("add")]
+        public IActionResult Add(EnstrumanCesit enstrumanCesit)
+        {
+            _enstrumanCesitService.Add(enstrumanCesit);
+            return Ok();
+        }
+
+        [HttpPost("update")]
+        public void Update(EnstrumanCesit enstrumanCesit)
+        {
+            _enstrumanCesitService.Update(enstrumanCesit);
+        }
+
+        [HttpPost("delete")]
+        public void Delete(EnstrumanCesit enstrumanCesit)
+        {
+            _enstrumanCesitService.Delete(enstrumanCesit);
         }
     }
 }

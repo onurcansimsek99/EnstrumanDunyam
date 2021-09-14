@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EntityLayer.Concrete
 {
-    public class Kullanici
+    public class Kullanici: IEntity
     {
         [Key]
         public int KullaniciID { get; set; }

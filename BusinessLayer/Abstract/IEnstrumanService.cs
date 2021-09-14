@@ -10,7 +10,7 @@ namespace BusinessLayer.Abstract
         List<Enstruman> GetAll();
         Enstruman Get(int enstrumanID);
         void Add(Enstruman enstruman);
-        void Delete(int enstrumanID);
+        void Delete(Enstruman enstruman);
         void Update(Enstruman enstruman);
     }
 }

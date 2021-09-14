@@ -14,12 +14,13 @@ namespace EnstrumanDunyam.API.Controllers
     [ApiController]
     public class EnstrumansController : ControllerBase
     {
-        private IEnstrumanService _enstrumanService;
+        EnstrumanManager _enstrumanService = new EnstrumanManager();
+        //private IEnstrumanService _enstrumanService;
 
-        public EnstrumansController()
-        {
-            _enstrumanService = new EnstrumanManager();
-        }
+        //public EnstrumansController()
+        //{
+        //    _enstrumanService = new EnstrumanManager();
+        //}
 
         [HttpGet]
         public List<Enstruman> GetAll()
@@ -27,10 +28,29 @@ namespace EnstrumanDunyam.API.Controllers
             return _enstrumanService.GetAll();
         }
 
-        [HttpGet("{enstrumanID}")]
-        public Enstruman Get(int enstrumanID)
+        [HttpGet("get")]
+        public Enstruman Get(int id)
         {
-            return _enstrumanService.Get(enstrumanID);
+            return _enstrumanService.Get(id);
+        }
+
+        [HttpPost("add")]
+        public IActionResult Add(Enstruman enstruman)
+        {
+            _enstrumanService.Add(enstruman);
+            return Ok();
+        }
+
+        [HttpPost("update")]
+        public void Update(Enstruman enstruman)
+        {
+            _enstrumanService.Update(enstruman);
+        }
+
+        [HttpPost("delete")]
+        public void Delete(Enstruman enstruman)
+        {
+            _enstrumanService.Delete(enstruman);
         }
 
 

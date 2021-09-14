@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete.EntitiyFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -11,34 +12,39 @@ namespace BusinessLayer.Concrete
     public class BlogManager : IBlogService
     {
 
-        private IBlogDal _blogDal;
+        EfBlogDal _blogDal = new EfBlogDal();
 
-        public BlogManager()
-        {
-        }
+        // IBlogDal _blogDal;
 
-        public BlogManager(IBlogDal blogDal)
-        {
-            _blogDal = blogDal;
-        }
+        //public BlogManager()
+        //{
+        //}
+
+        //public BlogManager(IBlogDal blogDal)
+        //{
+        //    _blogDal = blogDal;
+        //}
 
         public void Add(Blog blog)
         {
             _blogDal.Add(blog);
         }
 
-        public void Delete(int blogID)
+        public void Delete(Blog blog)
         {
-            _blogDal.Delete(blogID);
+            _blogDal.Delete(blog);
         }
+       
+
 
         public Blog Get(int blogID)
         {
-            return _blogDal.Get(blogID);
+            return _blogDal.Get(i=>i.BlogID==blogID);
         }
 
         public List<Blog> GetAll()
         {
+            //var deneme = _blogDal.GetAll();
             return _blogDal.GetAll();
         }
 

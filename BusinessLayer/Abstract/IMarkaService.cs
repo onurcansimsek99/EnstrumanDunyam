@@ -10,7 +10,7 @@ namespace BusinessLayer.Abstract
         List<Marka> GetAll();
         Marka Get(int markaID);
         void Add(Marka marka);
-        void Delete(int markaID);
+        void Delete(Marka marka);
         void Update(Marka marka);
     }
 }

@@ -5,13 +5,13 @@ using System.Text;
 
 namespace DataAccessLayer.Abstract
 {
-    public interface IBlogDal
+    public interface IBlogDal:IRepository<Blog>
     {
-        List<Blog> GetAll();
-        Blog Get(int blogID);
-        void Add(Blog blog);
+        //List<Blog> GetAll();
+        //Blog Get(int blogID);
+        //void Add(Blog blog);
         
-        void Delete(int blogID);
-        void Update(Blog blog);
+        //void Delete(int blogID);
+        //void Update(Blog blog);
     }
 }

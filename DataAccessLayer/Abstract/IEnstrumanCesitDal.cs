@@ -5,13 +5,13 @@ using System.Text;
 
 namespace DataAccessLayer.Abstract
 {
-    public interface IEnstrumanCesitDal
+    public interface IEnstrumanCesitDal : IRepository<EnstrumanCesit>
     {
-        List<EnstrumanCesit> GetAll();
-        EnstrumanCesit Get(int enstrumanCesitID);
-        void Add(EnstrumanCesit enstrumanCesit);
-        void Delete(int enstrumanCesitID);
-        void Update(EnstrumanCesit enstrumanCesit);
+        //List<EnstrumanCesit> GetAll();
+        //EnstrumanCesit Get(int enstrumanCesitID);
+        //void Add(EnstrumanCesit enstrumanCesit);
+        //void Delete(int enstrumanCesitID);
+        //void Update(EnstrumanCesit enstrumanCesit);
         
 
     }

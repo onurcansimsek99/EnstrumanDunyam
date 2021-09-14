@@ -5,12 +5,12 @@ using System.Text;
 
 namespace DataAccessLayer.Abstract
 {
-    public interface IMarkaDal
+    public interface IMarkaDal : IRepository<Marka>
     {
-        List<Marka> GetAll();
-        Marka Get(int markaID);
-        void Add(Marka marka);
-        void Delete(int markaID);
-        void Update(Marka marka);
+        //List<Marka> GetAll();
+        //Marka Get(int markaID);
+        //void Add(Marka marka);
+        //void Delete(int markaID);
+        //void Update(Marka marka);
     }
 }

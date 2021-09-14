@@ -10,7 +10,7 @@ namespace BusinessLayer.Abstract
         List<Slider> GetAll();
         Slider Get(int sliderID);
         void Add(Slider slider);
-        void Delete(int sliderID);
+        void Delete(Slider slider);
         void Update(Slider slider);
     }
 }

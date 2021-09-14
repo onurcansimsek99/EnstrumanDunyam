@@ -10,7 +10,7 @@ namespace BusinessLayer.Abstract
         List<Kullanici> GetAll();
         Kullanici Get(int kullaniciID);
         void Add(Kullanici kullanici);
-        void Delete(int kullaniciID);
+        void Delete(Kullanici kullanici);
         void Update(Kullanici kullanici);
     }
 }

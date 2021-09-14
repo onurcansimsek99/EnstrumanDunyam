@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete.EntitiyFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -9,26 +10,31 @@ namespace BusinessLayer.Concrete
 {
     public class KullaniciManager : IKullaniciService
     {
-        private IKullaniciDal _kullaniciDal;
+        EfKullaniciDal _kullaniciDal = new EfKullaniciDal();
 
-        public KullaniciManager(IKullaniciDal kullaniciDal)
-        {
-            _kullaniciDal = kullaniciDal;
-        }
+        //public KullaniciManager()
+        //{
+        //}
+
+        //public KullaniciManager(IKullaniciDal kullaniciDal)
+        //{
+        //    _kullaniciDal = kullaniciDal;
+        //}
 
         public void Add(Kullanici kullanici)
         {
             _kullaniciDal.Add(kullanici);
         }
 
-        public void Delete(int kullaniciID)
+        public void Delete(Kullanici kullanici)
         {
-            _kullaniciDal.Delete(kullaniciID);
+            _kullaniciDal.Delete(kullanici);
         }
 
+       
         public Kullanici Get(int kullaniciID)
         {
-            return _kullaniciDal.Get(kullaniciID);
+            return _kullaniciDal.Get(i=>i.KullaniciID==kullaniciID);
         }
 
         public List<Kullanici> GetAll()

@@ -14,12 +14,13 @@ namespace EnstrumanDunyam.API.Controllers
     [ApiController]
     public class BlogsController : ControllerBase
     {
-        private IBlogService _blogService;
+        BlogManager _blogService = new BlogManager();
+        //private IBlogService _blogService;
 
-        public BlogsController()
-        {
-            _blogService = new BlogManager();
-        }
+        //public BlogsController(BlogManager blogManager)
+        //{
+        //    _blogService = blogManager;
+        //}
 
         [HttpGet]
         public List<Blog> GetAll()
@@ -27,10 +28,29 @@ namespace EnstrumanDunyam.API.Controllers
             return _blogService.GetAll();
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("get")]
         public Blog Get(int id)
         {
             return _blogService.Get(id);
+        }
+
+        [HttpPost("add")]
+        public IActionResult Add(Blog blog)
+        {
+            _blogService.Add(blog);
+            return Ok();
+        }
+
+        [HttpPost("update")]                                 
+        public void Update(Blog blog)
+        {
+            _blogService.Update(blog);
+        }
+
+        [HttpPost("delete")]
+        public void Delete(Blog blog)
+        {
+            _blogService.Delete(blog);
         }
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EntityLayer.Concrete
 {
-    public class Slider
+    public class Slider:IEntity
     {
         [Key]
         public int SliderID { get; set; }

@@ -7,40 +7,42 @@ using System.Text;
 
 namespace DataAccessLayer.Concrete.EntitiyFramework
 {
-    public class EfEnstrumanCesitDal : IEnstrumanCesitDal
+    public class EfEnstrumanCesitDal : GenericRepository<EnstrumanCesit>, IEnstrumanCesitDal
     {
-        private Context _context = new Context();
-        public void Add(EnstrumanCesit enstrumanCesit)
-        {
-            _context.EnstrumanCesits.Add(enstrumanCesit);
-            _context.SaveChanges();
-        }
 
-        public void Delete(int enstrumanCesitID)
-        {
-            _context.EnstrumanCesits.Remove(_context.EnstrumanCesits.FirstOrDefault(p => p.EnstrumanCesitID == enstrumanCesitID));
-            _context.SaveChanges();
-        }
+        //    private Context _context = new Context();
+        //    public void Add(EnstrumanCesit enstrumanCesit)
+        //    {
+        //        _context.EnstrumanCesits.Add(enstrumanCesit);
+        //        _context.SaveChanges();
+        //    }
 
-        public EnstrumanCesit Get(int enstrumanCesitID)
-        {
-            return _context.EnstrumanCesits.FirstOrDefault(p => p.EnstrumanCesitID == enstrumanCesitID);
-        }
+        //    public void Delete(int enstrumanCesitID)
+        //    {
+        //        _context.EnstrumanCesits.Remove(_context.EnstrumanCesits.FirstOrDefault(p => p.EnstrumanCesitID == enstrumanCesitID));
+        //        _context.SaveChanges();
+        //    }
 
-        public List<EnstrumanCesit> GetAll()
-        {
-            return _context.EnstrumanCesits.ToList();             //using System.Linq
-        }
+        //    public EnstrumanCesit Get(int enstrumanCesitID)
+        //    {
+        //        return _context.EnstrumanCesits.FirstOrDefault(p => p.EnstrumanCesitID == enstrumanCesitID);
+        //    }
 
-        public void Update(EnstrumanCesit enstrumanCesit)
-        {
-            EnstrumanCesit enstrumanCesitToUpdate = _context.EnstrumanCesits.FirstOrDefault(p => p.EnstrumanCesitID == enstrumanCesit.EnstrumanCesitID);
+        //    public List<EnstrumanCesit> GetAll()
+        //    {
+        //        return _context.EnstrumanCesits.ToList();             //using System.Linq
+        //    }
 
-            enstrumanCesitToUpdate.EnstrumanCesitAdi = enstrumanCesit.EnstrumanCesitAdi;
-            enstrumanCesitToUpdate.EnstrumanCesitAciklamasi = enstrumanCesit.EnstrumanCesitAciklamasi;
+        //    public void Update(EnstrumanCesit enstrumanCesit)
+        //    {
+        //        EnstrumanCesit enstrumanCesitToUpdate = _context.EnstrumanCesits.FirstOrDefault(p => p.EnstrumanCesitID == enstrumanCesit.EnstrumanCesitID);
 
-            _context.SaveChanges();
-            
-        }
+        //        enstrumanCesitToUpdate.EnstrumanCesitAdi = enstrumanCesit.EnstrumanCesitAdi;
+        //        enstrumanCesitToUpdate.EnstrumanCesitAciklamasi = enstrumanCesit.EnstrumanCesitAciklamasi;
+
+        //        _context.SaveChanges();
+
+        //    }
+        //}
     }
 }

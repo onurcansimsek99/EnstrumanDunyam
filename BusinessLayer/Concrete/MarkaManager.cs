@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete.EntitiyFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -9,26 +10,30 @@ namespace BusinessLayer.Concrete
 {
     public class MarkaManager : IMarkaService
     {
-        private IMarkaDal _markaDal;
+        EfMarkaDal _markaDal = new EfMarkaDal();
 
-        public MarkaManager(IMarkaDal markaDal)
-        {
-            _markaDal = markaDal;
-        }
+        //public MarkaManager()
+        //{
+        //}
+
+        //public MarkaManager(IMarkaDal markaDal)
+        //{
+        //    _markaDal = markaDal;
+        //}
 
         public void Add(Marka marka)
         {
             _markaDal.Add(marka);
         }
 
-        public void Delete(int markaID)
+        public void Delete(Marka marka)
         {
-            _markaDal.Delete(markaID);
+            _markaDal.Delete(marka);
         }
 
         public Marka Get(int markaID)
         {
-            return _markaDal.Get(markaID);
+            return _markaDal.Get(i=>i.MarkaID==markaID);
         }
 
         public List<Marka> GetAll()

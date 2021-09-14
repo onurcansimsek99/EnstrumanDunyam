@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete.EntitiyFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -9,36 +10,40 @@ namespace BusinessLayer.Concrete
 {
     public class SliderManager : ISliderService
     {
-        private ISliderDal _sliderDal;
+        EfSliderDal _sliderDal = new EfSliderDal();
 
-        public SliderManager(ISliderDal sliderDal)
-        {
-            _sliderDal = sliderDal;
-        }
+        //public SliderManager()
+        //{
+        //}
+
+        //public SliderManager(ISliderDal sliderDal)
+        //{
+        //    _sliderDal = sliderDal;
+        //}
 
         public void Add(Slider slider)
         {
             _sliderDal.Add(slider);
         }
 
-        public void Delete(int sliderID)
+        public void Delete(Slider slider)
         {
-            _sliderDal.Delete(sliderID);
+            _sliderDal.Delete(slider);
         }
 
         public Slider Get(int sliderID)
         {
-            return _sliderDal.Get(sliderID);
+            return _sliderDal.Get(i=>i.SliderID==sliderID);
         }
 
         public List<Slider> GetAll()
         {
-            throw new NotImplementedException();
+            return _sliderDal.GetAll();
         }
 
         public void Update(Slider slider)
         {
-            throw new NotImplementedException();
+            _sliderDal.Update(slider);
         }
     }
 }
