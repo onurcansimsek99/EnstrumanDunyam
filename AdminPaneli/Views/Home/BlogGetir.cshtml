@@ -1,0 +1,28 @@
+﻿@model EntityLayer.Concrete.Blog
+@{
+    ViewData["Title"] = "BlogGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Blog Düzenleneme Sayfası</h1>
+<br />
+@using (Html.BeginForm("BlogGuncelle", "Home", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.BlogID)
+    @Html.TextBoxFor(x => x.BlogID, new { @class = "form-control", @readonly = "readonly"})
+    <br />
+    @Html.LabelFor(x => x.BlogBaslik)
+    @Html.TextBoxFor(x => x.BlogBaslik, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.BlogIcerik)
+    @Html.TextAreaFor(x => x.BlogIcerik, 15, 1, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.BlogYazar)
+    @Html.TextBoxFor(x => x.BlogYazar, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.BlogYayinlanmaTarihi)
+    @Html.TextBoxFor(x => x.BlogYayinlanmaTarihi, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Blog Güncelle</button>
+}
+

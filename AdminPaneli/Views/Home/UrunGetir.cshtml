@@ -1,0 +1,44 @@
+﻿@model EntityLayer.Concrete.Enstruman
+
+@{
+    ViewData["Title"] = "UrunGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Ürün Düzenleme Sayfası</h1>
+<br />
+@using (Html.BeginForm("UrunGuncelle", "Home", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.EnstrumanID)
+    @Html.TextBoxFor(x => x.EnstrumanID, new { @class = "form-control", @readonly="readonly" })
+    <br />
+    @Html.LabelFor(x => x.EnstrumanAdi)
+    @Html.TextBoxFor(x => x.EnstrumanAdi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.EnstrumanGorsel)
+    @Html.TextBoxFor(x => x.EnstrumanGorsel, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.EnstrumanTuru)
+    @Html.TextBoxFor(x => x.EnstrumanTuru, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.EnstrumanMarkasi)
+    @Html.TextBoxFor(x => x.EnstrumanMarkasi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.EnstrumanFiyati)
+    @Html.TextBoxFor(x => x.EnstrumanFiyati, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.OneCikanMi)
+    @Html.TextBoxFor(x => x.OneCikanMi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.EnstrumanYuklemeTarihi)
+    @Html.TextBoxFor(x => x.EnstrumanYuklemeTarihi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.MarkaID)
+    @Html.TextBoxFor(x => x.MarkaID, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.EnstrumanCesitID)
+    @Html.TextBoxFor(x => x.EnstrumanCesitID, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Ürün Güncelle</button>
+}
+

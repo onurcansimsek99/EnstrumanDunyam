@@ -1,0 +1,24 @@
+﻿@model EntityLayer.Concrete.Blog
+@{
+    ViewData["Title"] = "YeniBlog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="d-flex justify-content-center align-items-center flex-column p-5">
+    <h1>Yeni Blog Ekleme Sayfası</h1>
+    <br />
+    <form class="form-group w-75" method="post">
+        @Html.LabelFor(x => x.BlogBaslik)
+        @Html.TextBoxFor(x => x.BlogBaslik, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.BlogIcerik)
+        @Html.TextAreaFor(x => x.BlogIcerik, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.BlogYazar)
+        @Html.TextBoxFor(x => x.BlogYazar, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.BlogYayinlanmaTarihi)
+        @Html.TextBoxFor(x => x.BlogYayinlanmaTarihi, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-primary">Blog Kaydet</button>
+    </form>
+</div>

@@ -22,6 +22,7 @@ namespace DataAccessLayer.Concrete.EntitiyFramework
 
         public void Delete(T t)
         {
+
             var deletedEntity = context.Entry(t);
             deletedEntity.State = EntityState.Deleted;
             context.SaveChanges();
@@ -29,13 +30,15 @@ namespace DataAccessLayer.Concrete.EntitiyFramework
 
         public T Get(Expression<Func<T, bool>> filter)
         {
+
             return _object.SingleOrDefault(filter);
-            
+
         }
 
         public List<T> List(Expression<Func<T, bool>> filter)
         {
             return _object.Where(filter).ToList();
+            
         }
 
         public List<T> GetAll()
@@ -47,6 +50,7 @@ namespace DataAccessLayer.Concrete.EntitiyFramework
 
         public void Update(T t)
         {
+
             var updatedEntity = context.Entry(t);
             updatedEntity.State = EntityState.Modified;
             context.SaveChanges();
@@ -54,6 +58,7 @@ namespace DataAccessLayer.Concrete.EntitiyFramework
 
         public void Add(T t)
         {
+
             var addedEntity = context.Entry(t);
             addedEntity.State = EntityState.Added;
             context.SaveChanges();
