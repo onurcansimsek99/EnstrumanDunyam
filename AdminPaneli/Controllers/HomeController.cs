@@ -81,11 +81,48 @@ namespace AdminPaneli.Controllers
             return RedirectToAction("Urunler");
         }
 
-
-
         public IActionResult UrunCesitleri()
         {
+            var degerler = c.EnstrumanCesits.ToList();
+            return View(degerler);
+        }
+
+        [HttpGet]
+        public IActionResult YeniUrunCesidi()
+        {
+
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult YeniUrunCesidi(EnstrumanCesit ec)
+        {
+            c.EnstrumanCesits.Add(ec);
+            c.SaveChanges();
+            return RedirectToAction("UrunCesitleri");
+        }
+
+        public IActionResult UrunCesitSil(int id)
+        {
+            var urunCesit = c.EnstrumanCesits.Find(id);
+            c.EnstrumanCesits.Remove(urunCesit);
+            c.SaveChanges();
+            return RedirectToAction("UrunCesitleri");
+        }
+
+        public IActionResult UrunCesitGetir(int id)
+        {
+            var ur = c.EnstrumanCesits.Find(id);
+            return View("UrunCesitGetir", ur);
+        }
+
+        public IActionResult UrunCesitGuncelle(EnstrumanCesit ec)
+        {
+            var cesitGuncelle = c.EnstrumanCesits.Find(ec.EnstrumanCesitID);
+            cesitGuncelle.EnstrumanCesitAdi = ec.EnstrumanCesitAdi;
+            cesitGuncelle.EnstrumanCesitAciklamasi = ec.EnstrumanCesitAciklamasi;
+            c.SaveChanges();
+            return RedirectToAction("UrunCesitleri");
         }
 
         public IActionResult Markalar()

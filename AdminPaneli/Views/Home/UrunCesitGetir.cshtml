@@ -1,0 +1,22 @@
+﻿@model EntityLayer.Concrete.EnstrumanCesit
+@{
+    ViewData["Title"] = "UrunCesitGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Ürün Çeşitleri Sayfası</h1>
+<br />
+@using (Html.BeginForm("UrunCesitGuncelle", "Home", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.EnstrumanCesitID)
+    @Html.TextBoxFor(x => x.EnstrumanCesitID, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.EnstrumanCesitAdi)
+    @Html.TextBoxFor(x => x.EnstrumanCesitAdi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.EnstrumanCesitAciklamasi)
+    @Html.TextAreaFor(x => x.EnstrumanCesitAciklamasi, 15, 1, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-success">Ürün Çeşit Güncelle</button>
+}

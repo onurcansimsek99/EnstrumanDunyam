@@ -1,0 +1,21 @@
+﻿@model EntityLayer.Concrete.EnstrumanCesit
+@{
+    ViewData["Title"] = "YeniUrunCesidi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Yeni Ürün Çeşidi Ekleme</h1>
+<br />
+<div class="d-flex justify-content-center align-items-center flex-column p-5">
+    <h1>Yeni Ürün Çeşidi Ekleme Sayfası</h1>
+    <br />
+    <form class="form-group w-75" method="post">
+        @Html.LabelFor(x => x.EnstrumanCesitAdi)
+        @Html.TextBoxFor(x => x.EnstrumanCesitAdi, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.EnstrumanCesitAciklamasi)
+        @Html.TextAreaFor(x => x.EnstrumanCesitAciklamasi, new { @class = "form-control" })
+        <button class="btn btn-primary">Ürün Çeşidi Kaydet</button>
+    </form>
+</div>
+
