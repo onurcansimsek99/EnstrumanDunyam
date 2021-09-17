@@ -1,0 +1,25 @@
+﻿@model EntityLayer.Concrete.Slider
+@{
+    ViewData["Title"] = "SliderGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Slider Güncelleme Sayfası</h1>
+<br />
+@using (Html.BeginForm("SliderGuncelle", "Home", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.SliderID)
+    @Html.TextBoxFor(x => x.SliderID, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.SliderBaslik)
+    @Html.TextBoxFor(x => x.SliderBaslik, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.SliderAciklama)
+    @Html.TextAreaFor(x => x.SliderAciklama, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.SliderGorsel)
+    @Html.TextBoxFor(x => x.SliderGorsel, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-success">Slider Güncelle</button>
+}

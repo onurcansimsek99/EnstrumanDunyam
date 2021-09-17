@@ -1,4 +1,6 @@
-﻿<div>
+﻿@using EntityLayer.Concrete
+@model List<Slider>
+<div>
     <!-- Page wrapper  -->
     <!-- ============================================================== -->
     <div class="page-wrapper">
@@ -9,7 +11,6 @@
             <div class="row">
                 <div class="col-12 d-flex no-block align-items-center">
                     <h4 class="page-title">Slider Yönetim Sayfası</h4>
-                    <button class="btn btn-success" style="margin-left:20px;">Yeni Slider Ekle</button>
                     <div class="ms-auto text-end">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
@@ -41,30 +42,31 @@
                             <div class="table-responsive">
                                 <table id="zero_config"
                                        class="table table-striped table-bordered">
-                                    <thead>
+                                    <thead>arar
                                         <tr>
-                                            <th>Slider Listesi</th>
-                                            <th>Slider Ekleme Tarihi</th>
+                                            <th>ID</th>
+                                            <th>Slider Başlık</th>
+                                            <th>Slider Açıklama</th>
                                             <th>Slider Görsel</th>
-                                            <th></th>
-                                            <th></th>
+                                            <th>Düzenle</th>
+                                            <th>Sil</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Slider Test 1</td>
-                                            <td>29/08/2021</td>
-                                            <td> <img src="~/assets/images/background/img5.jpg" alt="slider-gorsel-1" width="100" height="75"/> </td>
-                                            <td>
-                                                <button class="btn btn-warning">Düzenle</button>
-                                            </td>
-                                            <td>
-                                                <button class="btn btn-danger">Sil</button>
-                                            </td>
-                                        </tr>
-
-                                    </tbody>
+                                    @foreach (var x in Model)
+                                    {
+                                        <tbody>
+                                            <tr>
+                                                <td>@x.SliderID</td>
+                                                <td>@x.SliderBaslik</td>
+                                                <td>@x.SliderAciklama</td>
+                                                <td>@x.SliderGorsel</td>
+                                                <td><a href="/Home/SliderGetir/@x.SliderID" class="btn btn-warning">Düzenle</a></td>
+                                                <td><a href="/Home/SliderSil/@x.SliderID" class="btn btn-danger">Sil</a></td>
+                                            </tr>
+                                        </tbody>
+                                    }
                                 </table>
+                                <a href="/Home/YeniSlider/" class="btn btn-primary">Yeni Slider Ekle</a>
                             </div>
                         </div>
                     </div>

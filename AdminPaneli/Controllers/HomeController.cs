@@ -215,7 +215,46 @@ namespace AdminPaneli.Controllers
 
         public IActionResult Slider()
         {
+            var degerler = c.Sliders.ToList();
+            return View(degerler);
+        }
+
+        [HttpGet]
+        public IActionResult YeniSlider()
+        {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult YeniSlider(Slider s)
+        {
+            c.Sliders.Add(s);
+            c.SaveChanges();
+            return RedirectToAction("Slider");
+        }
+
+        public IActionResult SliderSil(int id)
+        {
+            var s = c.Sliders.Find(id);
+            c.Sliders.Remove(s);
+            c.SaveChanges();
+            return RedirectToAction("Slider");
+        }
+
+        public IActionResult SliderGetir(int id)
+        {
+            var sl = c.Sliders.Find(id);
+            return View("SliderGetir", sl);
+        }
+
+        public IActionResult SliderGuncelle(Slider s)
+        {
+            var sld = c.Sliders.Find(s.SliderID);
+            sld.SliderBaslik = s.SliderBaslik;
+            sld.SliderAciklama = s.SliderAciklama;
+            sld.SliderGorsel = s.SliderGorsel;
+            c.SaveChanges();
+            return RedirectToAction("Slider");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
