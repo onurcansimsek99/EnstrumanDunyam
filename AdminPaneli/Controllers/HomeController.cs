@@ -127,9 +127,46 @@ namespace AdminPaneli.Controllers
 
         public IActionResult Markalar()
         {
+            var degerler = c.Markas.ToList();
+            return View(degerler);
+            
+        }
+
+        [HttpGet]
+        public IActionResult YeniMarka()
+        {
             return View();
         }
 
+        [HttpPost]
+        public IActionResult YeniMarka(Marka m)
+        {
+            c.Markas.Add(m);
+            c.SaveChanges();
+            return RedirectToAction("Markalar");
+        }
+
+        public IActionResult MarkaSil(int id)
+        {
+            var deger = c.Markas.Find(id);
+            c.Markas.Remove(deger);
+            c.SaveChanges();
+            return RedirectToAction("Markalar");
+        }
+
+        public IActionResult MarkaGetir(int id)
+        {
+            var mrk = c.Markas.Find(id);
+            return View("MarkaGetir", mrk);
+        }
+
+        public IActionResult MarkaGuncelle(Marka m)
+        {
+            var mg = c.Markas.Find(m.MarkaID);
+            mg.MarkaAdi = m.MarkaAdi;
+            c.SaveChanges();
+            return RedirectToAction("Markalar");
+        }
         public IActionResult Blog()
         {
             var degerler = c.Blogs.ToList();

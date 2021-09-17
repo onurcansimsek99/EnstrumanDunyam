@@ -1,4 +1,6 @@
-﻿<div>
+﻿@using EntityLayer.Concrete
+@model List<Marka>
+<div>
     <!-- Page wrapper  -->
     <!-- ============================================================== -->
     <div class="page-wrapper">
@@ -9,7 +11,6 @@
             <div class="row">
                 <div class="col-12 d-flex no-block align-items-center">
                     <h4 class="page-title">Markalar</h4>
-                    <button class="btn btn-success" style="margin-left:20px;">Yeni Marka Ekle</button>
                     <div class="ms-auto text-end">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
@@ -43,26 +44,26 @@
                                        class="table table-striped table-bordered">
                                     <thead>
                                         <tr>
+                                            <th>ID</th>
                                             <th>Marka Adı</th>
-                                            <th>Marka Eklenme Tarihi</th>
-                                            <th></th>
-                                            <th></th>
+                                            <th>Düzenle</th>
+                                            <th>Sil</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Bionez</td>
-                                            <td>29/08/2021</td>
-                                            <td>
-                                                <button class="btn btn-warning">Düzenle</button>
-                                            </td>
-                                            <td>
-                                                <button class="btn btn-danger">Sil</button>
-                                            </td>
-                                        </tr>
+                                    @foreach (var x in Model)
+                                    {
+                            <tbody>
+                                <tr>
+                                    <td>@x.MarkaID</td>
+                                    <td>@x.MarkaAdi</td>
+                                    <td><a href="/Home/MarkaGetir/@x.MarkaID" class="btn btn-warning">Düzenle</a></td>
+                                    <td><a href="/Home/MarkaSil/@x.MarkaID" class="btn btn-danger">Sil</a></td>
+                                </tr>
 
-                                    </tbody>
+                            </tbody>}
+
                                 </table>
+                                <a href="/Home/YeniMarka/" class="btn btn-primary">Yeni Marka Ekle</a>
                             </div>
                         </div>
                     </div>

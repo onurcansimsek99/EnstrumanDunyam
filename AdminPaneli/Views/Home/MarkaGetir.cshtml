@@ -1,0 +1,19 @@
+﻿@model EntityLayer.Concrete.Marka
+@{
+    ViewData["Title"] = "MarkaGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Marka Güncelleme Sayfası</h1>
+<br />
+@using (Html.BeginForm("MarkaGuncelle", "Home", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.MarkaID)
+    @Html.TextBoxFor(x => x.MarkaID, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.MarkaAdi)
+    @Html.TextBoxFor(x => x.MarkaAdi, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-success">Marka Güncelle</button>
+}

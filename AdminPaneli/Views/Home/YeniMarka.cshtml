@@ -1,0 +1,18 @@
+﻿@model EntityLayer.Concrete.Marka
+@{
+    ViewData["Title"] = "YeniMarka";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Yeni Marka Ekleme</h1>
+<br />
+<div class="d-flex justify-content-center align-items-center flex-column p-5">
+    <h1>Yeni Marka Ekleme Sayfası</h1>
+    <br />
+    <form class="form-group w-75" method="post">
+        @Html.LabelFor(x => x.MarkaAdi)
+        @Html.TextBoxFor(x => x.MarkaAdi, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-primary">Marka Kaydet</button>
+    </form>
+</div>
