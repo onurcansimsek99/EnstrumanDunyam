@@ -29,9 +29,13 @@ namespace EntityLayer.Concrete
         public int EnstrumanCesitID { get; set; }
         public virtual EnstrumanCesit EnstrumanCesit { get; set; }
 
+        public ICollection<Image> Images { get; set; }
+
 
         public int MarkaID { get; set; }
         public virtual Marka Marka { get; set; }
 
+
+       
     }
 }

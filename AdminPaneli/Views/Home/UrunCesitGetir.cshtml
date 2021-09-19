@@ -6,17 +6,21 @@
 
 <h1>Ürün Çeşitleri Sayfası</h1>
 <br />
-@using (Html.BeginForm("UrunCesitGuncelle", "Home", FormMethod.Post))
-{
-    @Html.LabelFor(x => x.EnstrumanCesitID)
-    @Html.TextBoxFor(x => x.EnstrumanCesitID, new { @class = "form-control", @readonly = "readonly" })
-    <br />
-    @Html.LabelFor(x => x.EnstrumanCesitAdi)
-    @Html.TextBoxFor(x => x.EnstrumanCesitAdi, new { @class = "form-control" })
-    <br />
-    @Html.LabelFor(x => x.EnstrumanCesitAciklamasi)
-    @Html.TextAreaFor(x => x.EnstrumanCesitAciklamasi, 15, 1, new { @class = "form-control" })
-    <br />
+<div class="d-flex justify-content-center align-items-center flex-column p-5">
+    <form class="form-group w-75" method="post">
+        @using (Html.BeginForm("UrunCesitGuncelle", "Home", FormMethod.Post))
+        {
+            @Html.LabelFor(x => x.EnstrumanCesitID)
+            @Html.TextBoxFor(x => x.EnstrumanCesitID, new { @class = "form-control", @readonly = "readonly" })
+            <br />
+            @Html.LabelFor(x => x.EnstrumanCesitAdi)
+            @Html.TextBoxFor(x => x.EnstrumanCesitAdi, new { @class = "form-control" })
+            <br />
+            @Html.LabelFor(x => x.EnstrumanCesitAciklamasi)
+            @Html.TextAreaFor(x => x.EnstrumanCesitAciklamasi, 15, 1, new { @class = "form-control" })
+            <br />
 
-    <button class="btn btn-success">Ürün Çeşit Güncelle</button>
-}
+            <button class="btn btn-success">Ürün Çeşit Güncelle</button>
+        }
+    </form>
+</div>

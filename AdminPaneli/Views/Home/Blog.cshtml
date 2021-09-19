@@ -46,6 +46,7 @@
                                     <thead>
                                         <tr>
                                             <th>ID</th>
+                                            <th>Görsel</th>
                                             <th>Blog Başlık</th>
                                             <th>Blog Ekleme Tarihi</th>
                                             <th>Yazar</th>
@@ -56,19 +57,20 @@
                                     </thead>
                                     @foreach (var x in Model)
                                     {
-                                        <tbody>
-                                            <tr>
-                                                <td>@x.BlogID</td>
-                                                <td>@x.BlogBaslik</td>
-                                                <td>@x.BlogYayinlanmaTarihi</td>
-                                                <td>@x.BlogYazar</td>
-                                                <td><a href="/Home/BlogGetir/@x.BlogID" class="btn btn-warning" >Düzenle</a></td>
-                                                <td><a href="/Home/BlogSil/@x.BlogID" class="btn btn-danger" >Sil</a></td>
-                                                <td><a href="#" class="btn btn-default" >Detaylar</a></td>
-                                            </tr>
+                        <tbody>
+                            <tr>
+                                <td>@x.BlogID</td>
+                                <td><img src="@x.BlogGorsel" class="img-thumbnail" style="width:200px; height:150px;"></td>
+                                <td>@x.BlogBaslik</td>
+                                <td>@x.BlogYayinlanmaTarihi</td>
+                                <td>@x.BlogYazar</td>
+                                <td><a href="/Home/BlogGetir/@x.BlogID" class="btn btn-warning">Düzenle</a></td>
+                                <td><a href="/Home/BlogSil/@x.BlogID" class="btn btn-danger">Sil</a></td>
+                                <td><a href="#" class="btn btn-default">Detaylar</a></td>
+                            </tr>
 
-                                        </tbody>
-                                    }
+                        </tbody>
+}
 
                                 </table>
                                 <a href="/Home/YeniBlog/" class="btn btn-primary">Yeni Blog Yazısı Ekle</a>
@@ -77,6 +79,7 @@
                     </div>
                 </div>
             </div>
+            @*<img src="@x.BlogGorsel" class="img-thumbnail" style="width:200px; height:150px;">*@
             <!-- ============================================================== -->
             <!-- End PAge Content -->
             <!-- ============================================================== -->

@@ -11,21 +11,22 @@
     <h1>Yeni Ürün Ekleme Sayfası</h1>
     <br />
     <form class="form-group w-75" method="post">
-        @Html.LabelFor(x => x.EnstrumanAdi)
+        <span>Enstrüman Adı:</span>
         @Html.TextBoxFor(x => x.EnstrumanAdi, new { @class = "form-control" })
         <br />
-        @Html.LabelFor(x => x.EnstrumanGorsel)
+        <span>Enstrüman Görsel:</span>
         @Html.TextBoxFor(x => x.EnstrumanGorsel, new { @class = "form-control" })
         <br />
-        @Html.LabelFor(x => x.EnstrumanTuru)
+        <span>Enstrüman Türü:</span>
         @Html.TextBoxFor(x => x.EnstrumanTuru, new { @class = "form-control" })
         <br />
-        @Html.LabelFor(x => x.EnstrumanMarkasi)
+        <span>Enstrüman Markası:</span>
         @Html.TextBoxFor(x => x.EnstrumanMarkasi, new { @class = "form-control" })
         <br />
-        @Html.LabelFor(x => x.EnstrumanFiyati)
+        <span>Enstrüman Fiyatı:</span>
         @Html.TextBoxFor(x => x.EnstrumanFiyati, new { @class = "form-control" })
         <br />
+        <span>Öne Çıkan Mı? (True ya da false giriniz! ):</span>
         @Html.LabelFor(x => x.OneCikanMi)
         @Html.TextBoxFor(x => x.OneCikanMi, new { @class = "form-control" })
         <br />

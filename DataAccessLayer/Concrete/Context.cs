@@ -19,6 +19,7 @@ namespace DataAccessLayer.Concrete
         public DbSet<Marka> Markas { get; set; }
         public DbSet<Kullanici> Kullanicis { get; set; }
         public DbSet<Slider> Sliders { get; set; }
+        public DbSet<Image> Images { get; set; }
 
     }
 }

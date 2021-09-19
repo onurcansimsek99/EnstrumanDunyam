@@ -9,14 +9,18 @@ using System.Threading.Tasks;
 using EntityLayer.Concrete;
 using DataAccessLayer.Concrete.EntitiyFramework;
 using DataAccessLayer.Concrete;
-
+using System.IO;
+using Microsoft.AspNetCore.Http;
+using BusinessLayer.Concrete;
 
 namespace AdminPaneli.Controllers
 {
     public class HomeController : Controller
     {
 
-        Context c = new Context();                                       //...
+        Context c = new Context();
+
+        ImageManager _imageManager = new ImageManager();
 
         private readonly ILogger<HomeController> _logger;
 
@@ -129,7 +133,7 @@ namespace AdminPaneli.Controllers
         {
             var degerler = c.Markas.ToList();
             return View(degerler);
-            
+
         }
 
         [HttpGet]
@@ -204,13 +208,14 @@ namespace AdminPaneli.Controllers
         public IActionResult BlogGuncelle(Blog b)
         {
             var blg = c.Blogs.Find(b.BlogID);
+            blg.BlogGorsel = b.BlogGorsel;
             blg.BlogBaslik = b.BlogBaslik;
             blg.BlogIcerik = b.BlogIcerik;
             blg.BlogYazar = b.BlogYazar;
             blg.BlogYayinlanmaTarihi = b.BlogYayinlanmaTarihi;
             c.SaveChanges();
             return RedirectToAction("Blog");
-            
+
         }
 
         public IActionResult Slider()
@@ -256,6 +261,16 @@ namespace AdminPaneli.Controllers
             c.SaveChanges();
             return RedirectToAction("Slider");
         }
+
+
+        [HttpPost("addImage")]
+        public IActionResult Add([FromForm(Name = ("Image"))] IFormFile file, [FromForm] Image image, [FromForm(Name = ("imageID"))] int id)
+        {
+           _imageManager.Add(file, image, id);
+
+            return Ok();
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
